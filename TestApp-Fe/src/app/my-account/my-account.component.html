@@ -1,0 +1,40 @@
+<section class="ftco-section contact-section">
+  <div class="container mt-5">
+      <div class="row block-9">
+          <div class="col-md-4 ">
+              <div class="row">
+                  <div class="col-md-12 mb-4">
+                  </div>
+                  <div class="col-md-12 mb-3">
+                      <div class="container" id="myBtnContainer">
+                          <button class="btn btn-primary btn-block p-3 px-xl-4 py-xl-3"
+                              (click)="currentTab = 'profile'">
+                                  My Profile
+                                 </button>
+                          <button class="btn btn-primary btn-block p-3 px-xl-4 py-xl-3" 
+                          (click)="currentTab = 'friends'">
+                                 Friends
+                          </button>
+                          <button class="btn btn-primary btn-block p-3 px-xl-4 py-xl-3" 
+                          (click)="currentTab = 'network'">
+                                 App Circle
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 ftco-animate fadeInUp ftco-animated">
+              <div class="container">
+                  <app-friends  *ngIf="currentTab === 'friends'">
+                  </app-friends>
+                  <app-profile  *ngIf="currentTab === 'profile'">
+                  </app-profile>
+                  <app-network *ngIf="currentTab === 'network'"> 
+                  </app-network>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</section>
